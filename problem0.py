@@ -27,10 +27,10 @@ learned_freq_dist = nltk.FreqDist(learned_words)
 learned_sorted_words = sorted(learned_freq_dist, key = learned_freq_dist.get, reverse = True)
 
 # Print number of tokens
-print(len(words))
+print(len(tokens))
 
 # print number of types
-print(len(set(words)))
+print(len(set(tokens)))
 
 # print number of words
 brown_corpus = brown.raw()
