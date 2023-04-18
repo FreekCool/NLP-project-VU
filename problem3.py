@@ -46,7 +46,7 @@ for line in f:
 probs = normalize(counts, norm='l1', axis=1)
 
 #TODO: writeout bigram probabilities
-with open('bigram_prob.txt', 'w') as wf:
+with open('bigram_probs.txt', 'w') as wf:
     # p(the | all)
     prob = probs[word_index_dict['all'], word_index_dict['the']]
     wf.write('p(the|all) = {}\n'.format(prob))
