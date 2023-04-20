@@ -26,9 +26,10 @@ with open('word_to_index_100.txt', 'w') as wf:
 
 f = codecs.open("brown_100.txt")    #corpus
 
+knowns = [('in','the'),('the', 'jury'),('jury', 'said'), ('agriculture', 'teacher')]
 
 #counts = #TODO: initialize numpy 0s array
-counts = np.zeros((len(word_index_dict), len(word_index_dict))) #Need to match the vocabulary, so to store the bigrams counts for every pair of words. It must fit the bigram model
+counts = np.zeros((len(knowns), len(word_index_dict))) #Need to match the vocabulary, so to store the bigrams counts for every pair of words. It must fit the bigram model
 # counts += 0.1
 
 #TODO: iterate through file and update counts
@@ -38,6 +39,8 @@ for line in f:
     previous_word_2 = '<s>'
 
     words = line.lower().split()       #Was first line.strip().split()
+
+    print(words)
 
     for i in range(2, len(words)):
         word = words[i]
