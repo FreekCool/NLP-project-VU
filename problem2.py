@@ -31,6 +31,7 @@ counts = np.zeros(len(word_index_dict)) #TODO: initialize counts to a zero vecto
 #TODO: iterate through file and update counts
 for line in f:
     words = line.lower().split()
+    print(words)
     for i in range(1, len(words)):
         word = words[i]
         counts[word_index_dict[word]] += 1

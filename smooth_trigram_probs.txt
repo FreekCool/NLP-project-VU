@@ -1,0 +1,4 @@
+p(time|all the) = 0.0012150668286755773
+p(said|the jury) = 0.07529162248144221
+p(against|the campaign) = 0.0012150668286755773
+p(for|anonymous calls) = 0.0012150668286755773
