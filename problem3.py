@@ -52,13 +52,13 @@ with open('bigram_probs.txt', 'w') as wf:
     wf.write('p(the|all) = {}\n'.format(prob))
 
     prob = probs[word_index_dict['the'], word_index_dict['jury']]
-    wf.write('p(the|all) = {}\n'.format(prob))
+    wf.write('p(jury|the) = {}\n'.format(prob))
 
     prob = probs[word_index_dict['the'], word_index_dict['campaign']]
-    wf.write('p(the|all) = {}\n'.format(prob))
+    wf.write('p(campaign|the) = {}\n'.format(prob))
 
     prob = probs[word_index_dict['anonymous'], word_index_dict['calls']]
-    wf.write('p(the|all) = {}\n'.format(prob))
+    wf.write('p(calls|anonymous) = {}\n'.format(prob))
 
 
 f.close()
