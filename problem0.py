@@ -88,6 +88,7 @@ freq_dist.plot(5000, cumulative=False)
 plt.title('Frequency distribution of words in the Brown corpus')
 plt.xlabel('Word rank')
 plt.ylabel('Frequency')
+plt.gca().set_xticklabels([])
 plt.show()
 
 # Plot frequency curve for romance category
@@ -96,6 +97,7 @@ romance_freq_dist.plot(5000, cumulative=False)
 plt.title('Frequency distribution of words in the romance category')
 plt.xlabel('Word rank')
 plt.ylabel('Frequency')
+plt.gca().set_xticklabels([])
 plt.show()
 
 # Plot frequency curve for learned category
@@ -104,6 +106,7 @@ learned_freq_dist.plot(5000, cumulative=False)
 plt.title('Frequency distribution of words in the learned category')
 plt.xlabel('Word rank')
 plt.ylabel('Frequency')
+plt.gca().set_xticklabels([])
 plt.show()
 
 # Plot frequency curves on log-log scales
@@ -117,5 +120,6 @@ plt.title('Log-log frequency distribution of words in the Brown corpus and two g
 plt.xlabel('Log word rank')
 plt.ylabel('Log frequency')
 plt.legend(['Corpus', 'Romance', 'Learned'])
+plt.gca().set_xticklabels([])
 plt.show()
 
