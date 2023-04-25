@@ -57,8 +57,6 @@ for line in f2:
     for word in words:
         wordprob = probs[word_index_dict[word]]
         sentprob *= wordprob
-    print(sentprob)
-#with open('unigram_eval.txt') as wf:
-#    wf.write('the probability of')
-#TODO: calculate the joint probabilities of all words in the sentence under the unigram model.
-#TODO: write the probability of each sentence to a file unigram_eval.txt, formatted to have one probability for each line of the output file.
+    with open('unigram_eval.txt', 'a') as wf:
+        wf.write('{}\n'.format(sentprob))
+  
