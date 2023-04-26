@@ -64,30 +64,31 @@ f.close()
 
 
 '''PROBLEM 6'''
-with open('toy_corpus.txt', 'r') as file:
+with open('smoothed_eval.txt', 'w') as wf:
+    with open('toy_corpus.txt', 'r') as file:
 
-    prev_word = '<s>'
+        prev_word = '<s>'
 
-    for line in file:
-        sentprob = 1
+        for line in file:
+            sentprob = 1
 
-        words = line.lower().split()
+            words = line.lower().split()
 
-        num_bigrams = len(words) - 1
+            num_bigrams = len(words) - 1
 
-        for i in range(1, len(words)):
+            for i in range(1, len(words)):
 
-            word = words[i]
+                word = words[i]
 
-            word_prob = probs[word_index_dict[prev_word], word_index_dict[word]]
+                word_prob = probs[word_index_dict[prev_word], word_index_dict[word]]
 
-            sentprob *= word_prob
+                sentprob *= word_prob
 
-            prev_word = word
+                prev_word = word
 
-        perplexity = 1 / (pow(sentprob, 1.0 / num_bigrams))
+            perplexity = 1 / (pow(sentprob, 1.0 / num_bigrams))
 
-        print(perplexity)
+            wf.write('{}\n'.format(perplexity))
 
 '''PROBLEM 7'''
 from generate import GENERATE
