@@ -63,7 +63,7 @@ with open('bigram_probs.txt', 'w') as wf:
 f.close()
 
 '''PROBLEM 6'''
-with open('bigram_eval.txt', 'w') as wf:
+with open('bigram_generation.txt', 'w') as wf:
     with open('toy_corpus.txt', 'r') as file:
 
         prev_word = '<s>'

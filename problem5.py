@@ -13,7 +13,7 @@ import random
 import codecs
 
 vocab = codecs.open("brown_vocab_100.txt")
-print(vocab)
+
 #load the indices dictionary
 word_index_dict = {}
 for i, line in enumerate(vocab):
