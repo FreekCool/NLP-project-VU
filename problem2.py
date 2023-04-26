@@ -47,3 +47,22 @@ with open('unigram_probs.txt', 'w') as wf:
 
     prob = probs[word_index_dict['resolution']]
     wf.write('probability of "resolution" = {}\n'.format(prob))
+
+
+'''PROBLEM 6'''
+with open('toy_corpus.txt', 'r') as file:
+    for line in file:
+        sentprob = 1
+
+        words = line.lower().split()
+
+        sent_len = len(words)
+
+        for word in words:
+            word_prob = probs[word_index_dict[word]]
+
+            sentprob *= word_prob
+
+        perplexity = 1/(pow(sentprob, 1.0/sent_len))
+
+        print(perplexity)

@@ -12,7 +12,7 @@ nltk.download('brown')
 # Load the corpus and select 10% of its words randomly
 corpus = nltk.corpus.brown.words()
 corpus_size = len(corpus)
-subset_size = int(corpus_size * 0.1)
+subset_size = int(corpus_size * 1)
 random.seed(42)  # for reproducibility
 subset_indices = random.sample(range(corpus_size), subset_size)
 subset = [corpus[i] for i in subset_indices]
