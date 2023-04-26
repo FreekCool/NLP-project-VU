@@ -15,7 +15,7 @@ import random
 import codecs
 
 vocab = codecs.open("brown_vocab_100.txt")
-print(vocab)
+
 #load the indices dictionary
 word_index_dict = {}
 for i, line in enumerate(vocab):
@@ -71,15 +71,27 @@ with open('toy_corpus.txt', 'r') as file:
 
         sent_len = len(words)
 
+        bigrams = 0
+
         for i in range(1, len(words)):
-            word = words[i]
 
             prev_word = words[i - 1]
+            word = words[i]
 
             word_prob = probs[word_index_dict[prev_word], word_index_dict[word]]
 
             sentprob *= word_prob
 
-        perplexity = 1 / (pow(sentprob, 1.0 / sent_len))
+            bigrams += 1
+
+        perplexity = 1 / (pow(sentprob, 1.0 / bigrams))
 
         print(perplexity)
+
+'''PROBLEM 7, GENERATE SENTENCES'''
+from generate import GENERATE
+
+with open('bigram_generation.txt', 'w') as wf:
+    for i in range(0,15):
+        sentence = GENERATE(word_index_dict, probs, 'bigram', 15, '<s>')
+        wf.write('{}\n'.format(sentence))

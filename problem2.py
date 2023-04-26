@@ -66,3 +66,12 @@ with open('toy_corpus.txt', 'r') as file:
         perplexity = 1/(pow(sentprob, 1.0/sent_len))
 
         print(perplexity)
+
+
+'''PROBLEM 7, GENERATION'''
+from generate import GENERATE
+
+with open('unigram_generation.txt', 'w') as wf:
+    for i in range(0,15):
+        sentence = GENERATE(word_index_dict, probs, 'unigram', 15, '<s>')
+        wf.write('{}\n'.format(sentence))
