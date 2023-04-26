@@ -54,7 +54,7 @@ for line in f:
 #TODO: normalize counts
 probs = normalize(counts, norm='l1', axis=1)
 
-'''Write unsmoothened probabilities to txt file'''
+'''Write unsmoothened probabilities to txt file''' # Results can be found in a file called problem5_unsmooth.txt
 with open('problem5_unsmooth.txt', 'w') as wf:
     # For p(past | in, the)
     prev_index = knowns.index(('in','the'))
@@ -105,7 +105,7 @@ counts += 0.1
 probs = normalize(counts, norm='l1', axis=1)
 
 '''Write smoothened probabilities to txt file'''
-with open('problem5_smooth.txt', 'w') as wf:
+with open('problem5_smooth.txt', 'w') as wf: # Results can be found in a file called problem5_smooth.txt
     # For p(past | in, the)
     prev_index = knowns.index(('in','the'))
     word_index = word_index_dict['past']
