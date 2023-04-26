@@ -65,27 +65,27 @@ f.close()
 
 '''PROBLEM 6'''
 with open('toy_corpus.txt', 'r') as file:
+
+    prev_word = '<s>'
+
     for line in file:
         sentprob = 1
 
         words = line.lower().split()
 
-        sent_len = len(words)
-
-        bigrams = 0
+        num_bigrams = len(words) - 1
 
         for i in range(1, len(words)):
 
-            prev_word = words[i - 1]
             word = words[i]
 
             word_prob = probs[word_index_dict[prev_word], word_index_dict[word]]
 
             sentprob *= word_prob
 
-            bigrams += 1
+            prev_word = word
 
-        perplexity = 1 / (pow(sentprob, 1.0 / sent_len))
+        perplexity = 1 / (pow(sentprob, 1.0 / num_bigrams))
 
         print(perplexity)
 
