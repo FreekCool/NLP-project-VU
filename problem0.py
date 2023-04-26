@@ -68,7 +68,7 @@ average_word_length = total_length/total_words
 print(f"Average word length is: {average_word_length}")
 
 # POS tagging
-pos_tags = nltk.pos_tag(tokens) # Should I do tokens or words?????
+pos_tags = nltk.pos_tag(tokens)
 
 pos_freq_dist = nltk.FreqDist(tag for (word, tag) in pos_tags)
 
